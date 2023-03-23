@@ -14,10 +14,14 @@ public class ExceptionService {
             throw new WrongLoginException();
         }
         for (int i = 0; i < login.length(); i++) {
+            int count = 0;
             for (int j = 0; j < symbols.length; j++) {
-                if(login.charAt(i) == symbols[j])
+                if (login.charAt(i) == symbols[j]) {
                     break;
-                if(login.charAt(i) != symbols[j]){
+                } else {
+                    count++;
+                }
+                if(count == symbols.length){
                     throw new WrongLoginException();
                 }
             }
@@ -26,10 +30,14 @@ public class ExceptionService {
             throw new WrongPasswordException();
         }
         for (int i = 0; i < password.length(); i++) {
+            int count = 0;
             for (int j = 0; j < symbols.length; j++) {
-                if(password.charAt(i) == symbols[j])
+                if (password.charAt(i) == symbols[j]) {
                     break;
-                if(password.charAt(i) != symbols[j]){
+            } else {
+                 count++;
+                }
+                if(count == symbols.length){
                     throw new WrongPasswordException();
                 }
             }
