@@ -1,8 +1,7 @@
 package com.example.exceptions;
 
-import java.io.IOException;
 
-public class WrongPasswordException extends IOException {
+public class WrongPasswordException extends Exception {
     public WrongPasswordException() {
         super();
     }
